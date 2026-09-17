@@ -26,6 +26,40 @@ Dive into the world of environmental monitoring and hydrochemistry with an inter
 
 * **Avg Safe pH & dGH:** The average water acidity and hardness levels, calculated strictly within the safe tolerance zones for the selected ecosystems.
 
+## 📊 Tech Stack & Architecture
+
+The project follows a classic corporate analytical solution architecture (DWH/BI). All heavy data transformation, initial data cleansing, and mathematical range comparisons were performed at the **SQL** level. This approach ensured maximum performance and a highly optimized, lightweight data model within **Power BI**.
+
+### 🛠️ SQL Stage: Cleansing, Transformation, and Logical Matching
+The raw flat database was normalized and cleansed using optimized SQL queries:
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Filling Data Gaps (Mean Imputation):** Missing cells (`NULL` and empty text strings `''`) in critical columns (`ph`, `Sulfate`, `Trihalomethanes`) were programmatically detected using `NULLIF(TRIM(), '')` structures and forced to be replaced with the exact arithmetic mean values across the entire dataset.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Metric Normalization:** The total water hardness indicator, `Hardness` (originally provided in ppm/mg/L), was mathematically converted into German degrees of hardness (**dGH**) using the formula `Hardness / 17.84` and rounded to 2 decimal places to fully align with the aquarium directory.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Generating a Many-to-Many Fact Table:** Since a single water sample can suit multiple species, and a single species can live in thousands of different samples, a unique `water_id` field was generated in SQL to create a **Compatibility Fact Table `(fact_compatibility)`** containing 107k+ rows. The merge was performed using non-equi JOIN logic: `water_ph BETWEEN pH_Min AND pH_Max AND water_dgh BETWEEN gh_Min AND gh_Max.` This shifted the heavy computation of overlapping ranges onto the database backend.
+
+### 📐 Power BI Stage: Data Modeling and Presentation Layer
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Data Model:** A canonical **Star Schema** data model was established in the modeling view. Two dimension tables (`dim_fish_directory` and `dim_water_parameters`) manage the central fact table (`fact_compatibility`) through single-directional 1-to-many (`1 to *`) relationships.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Interface Optimization (DAX Modeling):** To resolve the circular dependency bug and set the correct experience-based sorting logic within the slicers, an independent lookup table called `Difficulty_Lookup` was generated using DAX. The text tiles were forced into their true biological order: *Beginner ➡️ Intermediate ➡️ Advanced*.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Advanced DAX:** All analytical indicators are computed using dynamic measures grouped inside an isolated `_Measures` folder. The `CALCULATE` function was utilized to enforce cross-filtering across the Many-to-Many context, allowing for the calculation of exact average toxin levels specifically for the compatible water. Conditional logic was written for dynamic text alerts (`Chloramines Warning`).
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **UI/UX & Cross-Page Filtering:** Synced slicers were configured to pass filters between pages. The **Drill-through** feature was integrated: right-clicking on a specific species navigates the user to its corresponding chemical environment analysis, while right-clicking on an anomalous water sample on the Scatter Chart returns the user to the first page, filtering the matrix to show only the species capable of surviving in that specific water sample.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
