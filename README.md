@@ -57,8 +57,56 @@ The raw flat database was normalized and cleansed using optimized SQL queries:
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> `Kribensis` and `Clown loach` proved to be the most resilient species, capable of thriving in nearly **70%** of all analyzed water sources.
 
-<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" />
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> `Discus` and `Cardinal tetra` are the most delicate species, matching with less than **10%** of water sources due to their strict acidity requirements.
 
+* ### Species Distribution by Aquarium Zone:
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> This donut chart helps users distribute fish properly and evenly throughout the aquarium.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> Strictly bottom-dwelling inhabitants (`Bottom`) make up the largest share of the database **(nearly 25%)**, while mid-water fish (`Midwater`) account for **28%**.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> Thanks to dynamic filtering, selecting a specific water type immediately displays the percentage ratio of inhabitants for each water layer, preventing overcrowding at the bottom or surface.
+
+* ### Water Source Chemical Distribution (pH vs. dGH):
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> This scatter plot maps out the complete hydrochemical profile, where each of the **3,276 points** represents an individual water sample.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> Safe human drinking water (`Drinking Water`, highlighted in light blue) forms a dense core in the center of the chart (neutral pH 6.0–8.0).
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> The visual uncovers a major ecological paradox: more than half of the water safe for humans is completely unsuitable for soft-water Amazonian fish.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> The clear vertical line of points down the center demonstrates the high quality of data cleansing — showcasing where missing values were successfully replaced in SQL using the mean pH of 7.08.
+
+* ### Top 10 Species by Sulfate Exposure:
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> This chart identifies the Top 10 inhabitants that, due to their broad tolerance ranges, most frequently end up in water with high chemical loading.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> `Cardinal tetra` tops the ranking, with the average sulfate concentration in its compatible water being the highest at **347.98**.
+
+* ### Top 10 Species with Lowest Chloramine Tolerance:
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> By isolating only the Top 10 critical cases, we can clearly pinpoint the inhabitants exposed to the highest average toxicity levels.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> For the anti-rating leaders — `Betta fish` and `Flying fox` — the average chloramine level exceeds safe thresholds, which automatically triggers the **`⚠️ Dechlorinator Required!`** alert in the main ledger to signal the mandatory use of water conditioners.
+
+* ### Water Clarity & Conductivity Profile by Aquarium Zone:
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> This combo chart compares two vital environmental markers: water turbidity (line) and dissolved solids/mineralization (columns).
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> The analysis confirmed a key biological insight: bottom-dwelling inhabitants (`Bottom`) live in environments with higher natural turbidity (`Turbidity`) compared to top-layer fish.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> Electrical conductivity (`Conductivity`) remains perfectly stable across all zones (around 424–425 µS/cm), indicating highly consistent mineral levels throughout this specific dataset.
+
+## 🚀 **Business Value & Recommendations**
+Based on the built dashboard, the following actionable solutions have been developed for both users and businesses (such as aquarium retail stores):
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Smart Matching & Optimization:** Instead of manually studying dozens of reference guides, the dashboard’s algorithm allows users to instantly match the perfect combination of fish to a customer's specific tap water parameters with just a single click.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Minimizing Biological Risks:** The aquarium zone distribution donut chart provides a clear, visual guide for proper, multi-layered fish stocking (surface, midwater, bottom). This reduces territorial stress and aggression among aquarium inhabitants.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Automating Sales (Upselling Strategies):** Thanks to the automated `Chloramines Warning` trigger, aquarium stores can implement data-driven product recommendations. When a customer purchases high-exposure species like `Betta fish` or `Flying fox`, the system prompts the staff to recommend dechlorinators and water conditioners, effectively increasing the average order value.
+
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> Environmental Risk Audit: The end-to-end cross-page Drill-through filter enables ecologists to instantly isolate chemical anomalies on the Scatter Chart and visually identify which aquatic species would be the first to face extinction threats in a specific region.
 
 
 
