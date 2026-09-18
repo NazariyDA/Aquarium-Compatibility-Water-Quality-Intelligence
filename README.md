@@ -26,6 +26,12 @@ Dive into the world of environmental monitoring and hydrochemistry with an inter
 
 * **Avg Safe pH & dGH:** The average water acidity and hardness levels, calculated strictly within the safe tolerance zones for the selected ecosystems.
 
+<img width="818" height="456" alt="Page 1" src="https://github.com/user-attachments/assets/1a799c19-63b6-4edf-b413-2141468e8d27" />
+
+
+<img width="818" height="456" alt="page 2" src="https://github.com/user-attachments/assets/0887e19a-ec84-4da3-a7b8-1de0c85c7532" />
+
+
 ## 📊 Tech Stack & Architecture
 
 The project follows a classic corporate analytical solution architecture (DWH/BI). All heavy data transformation, initial data cleansing, and mathematical range comparisons were performed at the **SQL** level. This approach ensured maximum performance and a highly optimized, lightweight data model within **Power BI**.
