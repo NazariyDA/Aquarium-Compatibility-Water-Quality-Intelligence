@@ -35,6 +35,53 @@ The raw flat database was normalized and cleansed using optimized SQL queries:
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Filling Data Gaps (Mean Imputation):** Missing cells (`NULL` and empty text strings `''`) in critical columns (`ph`, `Sulfate`, `Trihalomethanes`) were programmatically detected using `NULLIF(TRIM(), '')` structures and forced to be replaced with the exact arithmetic mean values across the entire dataset.
 
+<details>
+  <summary>📄 SQL Query (Click to expand)</summary>
+  
+  ```sql
+WITH prepared_water AS (
+    SELECT 
+        NULLIF(TRIM(CAST(ph AS VARCHAR)), '') AS ph_clean,
+        NULLIF(TRIM(CAST(Sulfate AS VARCHAR)), '') AS sulfate_clean,
+        NULLIF(TRIM(CAST(Trihalomethanes AS VARCHAR)), '') AS trihalomethanes_clean,
+        Hardness, Solids, Chloramines, Conductivity, Organic_carbon, Turbidity, Potability
+    FROM water_potability
+),
+averages AS (
+    SELECT 
+        AVG(CAST(ph_clean AS DOUBLE PRECISION)) AS avg_ph,
+        AVG(CAST(sulfate_clean AS DOUBLE PRECISION)) AS avg_sulfate,
+        AVG(CAST(trihalomethanes_clean AS DOUBLE PRECISION)) AS avg_trihalomethanes
+    FROM prepared_water
+)
+SELECT 
+    ROW_NUMBER() OVER () AS water_id,
+    ROUND(
+        COALESCE(CAST(p.ph_clean AS DOUBLE PRECISION), a.avg_ph), 
+        2
+    ) AS water_ph,
+    ROUND((CAST(p.Hardness AS DOUBLE PRECISION) / 17.84), 2) AS water_dgh,
+    ROUND(
+        COALESCE(CAST(p.sulfate_clean AS DOUBLE PRECISION), a.avg_sulfate), 
+        2
+    ) AS Sulfate,
+    ROUND(
+        COALESCE(CAST(p.trihalomethanes_clean AS DOUBLE PRECISION), a.avg_trihalomethanes), 
+        2
+    ) AS Trihalomethanes,
+    p.Solids, 
+    p.Chloramines, 
+    p.Conductivity, 
+    p.Organic_carbon, 
+    p.Turbidity, 
+    p.Potability
+FROM prepared_water p
+CROSS JOIN averages a;
+```
+
+</details>
+
+
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Metric Normalization:** The total water hardness indicator, `Hardness` (originally provided in ppm/mg/L), was mathematically converted into German degrees of hardness (**dGH**) using the formula `Hardness / 17.84` and rounded to 2 decimal places to fully align with the aquarium directory.
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Generating a Many-to-Many Fact Table:** Since a single water sample can suit multiple species, and a single species can live in thousands of different samples, a unique `water_id` field was generated in SQL to create a **Compatibility Fact Table `(fact_compatibility)`** containing 107k+ rows. The merge was performed using non-equi JOIN logic: `water_ph BETWEEN pH_Min AND pH_Max AND water_dgh BETWEEN gh_Min AND gh_Max.` This shifted the heavy computation of overlapping ranges onto the database backend.
