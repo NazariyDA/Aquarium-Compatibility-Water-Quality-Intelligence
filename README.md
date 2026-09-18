@@ -196,6 +196,7 @@ Based on the built dashboard, the following actionable solutions have been devel
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> Environmental Risk Audit: The end-to-end cross-page Drill-through filter enables ecologists to instantly isolate chemical anomalies on the Scatter Chart and visually identify which aquatic species would be the first to face extinction threats in a specific region.
 
+### Thank you for your interest in this project <img width="35" height="35" alt="image" src="https://github.com/user-attachments/assets/a8686c00-0cb6-431a-aeac-f0a4cbc82a09" />
 
 
 
