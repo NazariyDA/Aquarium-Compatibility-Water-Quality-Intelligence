@@ -49,13 +49,15 @@ The raw flat database was normalized and cleansed using optimized SQL queries:
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **UI/UX & Cross-Page Filtering:** Synced slicers were configured to pass filters between pages. The **Drill-through** feature was integrated: right-clicking on a specific species navigates the user to its corresponding chemical environment analysis, while right-clicking on an anomalous water sample on the Scatter Chart returns the user to the first page, filtering the matrix to show only the species capable of surviving in that specific water sample.
 
+## 🔎 **Insights & Analysis**
 
+* ### Water Quality & Fish Species Compatibility Directory:
 
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> The analysis clearly separates aquarium inhabitants into two categories: resilient and sensitive.
 
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> `Kribensis` and `Clown loach` proved to be the most resilient species, capable of thriving in nearly **70%** of all analyzed water sources.
 
-
-
-
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" />
 
 
 
