@@ -39,6 +39,41 @@ The raw flat database was normalized and cleansed using optimized SQL queries:
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Generating a Many-to-Many Fact Table:** Since a single water sample can suit multiple species, and a single species can live in thousands of different samples, a unique `water_id` field was generated in SQL to create a **Compatibility Fact Table `(fact_compatibility)`** containing 107k+ rows. The merge was performed using non-equi JOIN logic: `water_ph BETWEEN pH_Min AND pH_Max AND water_dgh BETWEEN gh_Min AND gh_Max.` This shifted the heavy computation of overlapping ranges onto the database backend.
 
+<details>
+  <summary>📄 SQL Query (Click to expand)</summary>
+  
+  ```sql
+WITH cleaned_water AS (
+    SELECT 
+        ROW_NUMBER() OVER () AS water_id,
+        ROUND(COALESCE(CAST(p.ph_clean AS REAL), a.avg_ph), 2) AS water_ph,
+        ROUND((CAST(p.Hardness AS REAL) / 17.84), 2) AS water_dgh
+    FROM (
+        SELECT 
+            NULLIF(TRIM(CAST(ph AS TEXT)), '') AS ph_clean,
+            Hardness
+        FROM water_potability
+    ) p
+    CROSS JOIN (
+        SELECT AVG(CAST(NULLIF(TRIM(CAST(ph AS TEXT)), '') AS REAL)) AS avg_ph 
+        FROM water_potability
+    ) a
+)
+SELECT 
+    w.water_id,
+    f.Slug AS fish_slug
+FROM cleaned_water w
+JOIN fish_directory f 
+  ON w.water_ph BETWEEN CAST(f."pH Min" AS REAL) AND CAST(f."pH Max" AS REAL)
+ AND w.water_dgh BETWEEN CAST(f."gh Min (dGH)" AS REAL) AND CAST(f."gh Max (dGH)" AS REAL);
+```
+
+</details>
+
+
+
+
+
 ### 📐 Power BI Stage: Data Modeling and Presentation Layer
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Data Model:** A canonical **Star Schema** data model was established in the modeling view. Two dimension tables (`dim_fish_directory` and `dim_water_parameters`) manage the central fact table (`fact_compatibility`) through single-directional 1-to-many (`1 to *`) relationships.
