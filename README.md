@@ -8,7 +8,7 @@ Dive into the world of environmental monitoring and hydrochemistry with an inter
 
 **Analytical Approach to Fishkeeping:** Identifying the most resilient and delicate species, uncovering hidden hydrochemical paradoxes (such as the mismatch between human drinking water and fish requirements), and assessing the risks of toxic substances (sulfates and chloramines) on ecosystem bioloads.
 
-## 🗒 Data Overview
+## <img width="30" height="30" alt="plants" src="https://github.com/user-attachments/assets/3e2daaa5-9ad4-41c6-89d4-88eefcbc181a" /> Data Overview
 
 **Data Volume & Source Databases:** The project is built on the combination of two independent data sources:
 * **Water Quality Database:** A database consisting of **3,276 unique environmental water samples (tests)**, each containing 9 unique chemical and physical parameters.
@@ -32,7 +32,7 @@ Dive into the world of environmental monitoring and hydrochemistry with an inter
 <img width="818" height="456" alt="page 2" src="https://github.com/user-attachments/assets/0887e19a-ec84-4da3-a7b8-1de0c85c7532" />
 
 
-## 📊 Tech Stack & Architecture
+## <img width="30" height="30" alt="filter" src="https://github.com/user-attachments/assets/1cbf3a4a-283d-4c9d-8aff-43bffc1ceae1" /> Tech Stack & Architecture
 
 The project follows a classic corporate analytical solution architecture (DWH/BI). All heavy data transformation, initial data cleansing, and mathematical range comparisons were performed at the **SQL** level. This approach ensured maximum performance and a highly optimized, lightweight data model within **Power BI**.
 
