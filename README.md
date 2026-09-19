@@ -1,7 +1,7 @@
 # <img width="35" height="35" alt="aquarium32" src="https://github.com/user-attachments/assets/15805268-2174-4764-9f56-2912cba62a5b" /> Aquarium Compatibility & Water Quality Intelligence
 Dive into the world of environmental monitoring and hydrochemistry with an interactive Power BI dashboard that transforms thousands of complex water chemical tests into intuitive analytical stories. This project uncovers critical insights into species survivability, environmental parameter synergy, and optimal bioload distribution across aquatic ecosystems.
 
-## 🎯 Objectives of this project
+## <img width="30" height="30" alt="fish orange" src="https://github.com/user-attachments/assets/42d4a742-61f8-487d-863c-00de840268fa" /> Objectives of this project
 **Exploring Environmental Patterns:** Analyzing the relationship between water chemical composition (pH acidity, dGH hardness) and the specific biological requirements of over 70 species of aquarium inhabitants to automate the eco-matching process.
 
 **Developing an End-to-End Solution:** Demonstrating the full data lifecycle (ETL/ELT) — from importing raw, flat CSV files, through data cleaning and transformation in SQL, to designing a relational data model and building an interactive dashboard.
@@ -137,7 +137,7 @@ JOIN fish_directory f
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **UI/UX & Cross-Page Filtering:** Synced slicers were configured to pass filters between pages. The **Drill-through** feature was integrated: right-clicking on a specific species navigates the user to its corresponding chemical environment analysis, while right-clicking on an anomalous water sample on the Scatter Chart returns the user to the first page, filtering the matrix to show only the species capable of surviving in that specific water sample.
 
-## 🔎 **Insights & Analysis**
+## <img width="30" height="30" alt="star" src="https://github.com/user-attachments/assets/6c69c7cf-8630-4caf-815c-d8bf097caa1f" /> **Insights & Analysis**
 
 * ### Water Quality & Fish Species Compatibility Directory:
 
@@ -185,7 +185,7 @@ JOIN fish_directory f
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> Electrical conductivity (`Conductivity`) remains perfectly stable across all zones (around 424–425 µS/cm), indicating highly consistent mineral levels throughout this specific dataset.
 
-## 🚀 **Business Value & Recommendations**
+## <img width="25" height="25" alt="shell" src="https://github.com/user-attachments/assets/678af2f0-fd12-4141-96fd-86de33d96437" /> **Business Value & Recommendations**
 Based on the built dashboard, the following actionable solutions have been developed for both users and businesses (such as aquarium retail stores):
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Smart Matching & Optimization:** Instead of manually studying dozens of reference guides, the dashboard’s algorithm allows users to instantly match the perfect combination of fish to a customer's specific tap water parameters with just a single click.
@@ -196,7 +196,9 @@ Based on the built dashboard, the following actionable solutions have been devel
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> Environmental Risk Audit: The end-to-end cross-page Drill-through filter enables ecologists to instantly isolate chemical anomalies on the Scatter Chart and visually identify which aquatic species would be the first to face extinction threats in a specific region.
 
-### Thank you for your interest in this project <img width="35" height="35" alt="image" src="https://github.com/user-attachments/assets/a8686c00-0cb6-431a-aeac-f0a4cbc82a09" />
+### Thank you for your interest in this project <img width="25" height="25" alt="fish" src="https://github.com/user-attachments/assets/f9aee3a9-af8b-4492-9651-a75cdcc00b61" />
+
+
 
 
 
