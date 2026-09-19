@@ -127,7 +127,7 @@ JOIN fish_directory f
 
 
 
-### 📐 Power BI Stage: Data Modeling and Presentation Layer
+### <img width="25" height="25" alt="water-splash" src="https://github.com/user-attachments/assets/b48396f0-9c54-4b73-a7a8-62e8cdff2eb3" /> Power BI Stage: Data Modeling and Presentation Layer
 
 <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Data Model:** A canonical **Star Schema** data model was established in the modeling view. Two dimension tables (`dim_fish_directory` and `dim_water_parameters`) manage the central fact table (`fact_compatibility`) through single-directional 1-to-many (`1 to *`) relationships.
 
