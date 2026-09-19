@@ -1,4 +1,4 @@
-# 🐠 Aquarium Compatibility & Water Quality Intelligence
+# <img width="35" height="35" alt="aquarium32" src="https://github.com/user-attachments/assets/15805268-2174-4764-9f56-2912cba62a5b" /> Aquarium Compatibility & Water Quality Intelligence
 Dive into the world of environmental monitoring and hydrochemistry with an interactive Power BI dashboard that transforms thousands of complex water chemical tests into intuitive analytical stories. This project uncovers critical insights into species survivability, environmental parameter synergy, and optimal bioload distribution across aquatic ecosystems.
 
 ## 🎯 Objectives of this project
