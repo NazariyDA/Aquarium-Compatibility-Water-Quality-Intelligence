@@ -11,7 +11,7 @@ Dive into the world of environmental monitoring and hydrochemistry with an inter
 ## <img width="30" height="30" alt="plants" src="https://github.com/user-attachments/assets/3e2daaa5-9ad4-41c6-89d4-88eefcbc181a" /> Data Overview
 
 **Data Volume & Source Databases:** The project is built on the combination of two independent data sources:
-* **Water Quality Database:** A database consisting of **3,276 unique environmental water samples (tests)**, each containing 9 unique chemical and physical parameters.
+* **[Water Quality Database](./water_potability.csv):** A database consisting of **3,276 unique environmental water samples (tests)**, each containing 9 unique chemical and physical parameters.
 
 * **Aquarium Directory:** A database containing **75 different species of aquarium inhabitants** along with their individual environmental requirements.
 
