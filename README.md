@@ -39,7 +39,7 @@ The project follows a classic corporate analytical solution architecture (DWH/BI
 ### <img width="30" height="30" alt="shrimp" src="https://github.com/user-attachments/assets/9d74729c-65ad-4fb6-9c1a-e7398b02ad1e" /> SQL Stage: Cleansing, Transformation, and Logical Matching
 The raw flat database was normalized and cleansed using optimized SQL queries:
 
-<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Filling Data Gaps (Mean Imputation):** Missing cells (`NULL` and empty text strings `''`) in critical columns (`ph`, `Sulfate`, `Trihalomethanes`) were programmatically detected using `NULLIF(TRIM(), '')` structures and forced to be replaced with the exact arithmetic mean values across the entire dataset.
+<img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/58c263c3-4d25-4ef9-b06e-951fea48eba1" /> **Filling Data Gaps (Mean Immitation):** Missing cells (`NULL` and empty text strings `''`) in critical columns (`ph`, `Sulfate`, `Trihalomethanes`) were programmatically detected using `NULLIF(TRIM(), '')` structures and forced to be replaced with the exact arithmetic mean values across the entire dataset.
 
 <details>
   <summary>📄 SQL Query (Click to expand)</summary>
