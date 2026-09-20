@@ -13,7 +13,7 @@ Dive into the world of environmental monitoring and hydrochemistry with an inter
 **Data Volume & Source Databases:** The project is built on the combination of two independent data sources:
 * **[Water Quality Database](./water_potability.csv):** A database consisting of **3,276 unique environmental water samples (tests)**, each containing 9 unique chemical and physical parameters.
 
-* **Aquarium Directory:** A database containing **75 different species of aquarium inhabitants** along with their individual environmental requirements.
+* **[Aquarium Directory](./fish_directory.csv):** A database containing **75 different species of aquarium inhabitants** along with their individual environmental requirements. 
 
 **Compatibility Scale:** Through analytical data modeling in SQL, **107,739 unique instances of successful compatibility** were generated and analyzed between the water source parameters and the species' tolerance ranges.
 
